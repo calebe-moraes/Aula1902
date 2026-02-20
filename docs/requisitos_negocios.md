@@ -1,38 +1,81 @@
-# Requisitos do Sistema
+# Documento de Requisitos do Sistema
 
-## 1. Requisitos Funcionais (RF)
-
-### RF01 — Login do usuário
-O sistema deve permitir que o usuário realize login com e-mail e senha.
-
-### RF02 — Recuperar senha
-O sistema deve permitir que o usuário solicite recuperação de senha por e-mail.
-
-### RF03 — Atualização de perfil
-O usuário pode alterar nome, foto e dados pessoais.
+## 1. Introdução
+Este documento apresenta os requisitos do sistema desenvolvido na disciplina, com o objetivo de organizar as funcionalidades, regras e características do software.
 
 ---
 
-## 2. Requisitos Não Funcionais (RNF)
+# 2. Requisitos Funcionais (RF)
 
-### RNF01 — Tempo de resposta
-O sistema deve carregar telas principais em até **2 segundos**.
+## RF01 – Cadastro de Usuários
+O sistema deve permitir o cadastro de novos usuários com nome, email e senha.
 
-### RNF02 — Segurança
-As senhas devem ser armazenadas usando hash seguro (ex.: bcrypt).
+Critério de Aceitação:
+- O usuário deve conseguir se cadastrar com dados válidos.
+- O sistema deve salvar as informações no banco de dados.
 
-### RNF03 — Compatibilidade
-O sistema deve funcionar nos navegadores Chrome, Edge e Firefox.
+Verificação:
+- Teste de cadastro com dados corretos e incorretos.
 
 ---
 
-## 3. Regras de Negócio (RN)
+## RF02 – Login no Sistema
+O sistema deve permitir que usuários cadastrados realizem login.
 
-### RN01 — Maioridade
-Para criar uma conta, o usuário deve ter mais de 18 anos.
+Critério de Aceitação:
+- O usuário deve acessar o sistema com email e senha válidos.
 
-### RN02 — Bloqueio por inatividade
-Usuários inativos por mais de 90 dias devem ser marcados como inativos.
+Verificação:
+- Testar login com credenciais válidas e inválidas.
 
-### RN02 — Limite de tentativas de login
-Após 5 tentativas inválidas, a conta deve ser temporariamente bloqueada.
+---
+
+## RF03 – Visualização de Dados no Dashboard
+O sistema deve exibir informações principais em um dashboard.
+
+Critério de Aceitação:
+- O dashboard deve carregar os dados corretamente após o login.
+
+Verificação:
+- Conferir se os dados aparecem corretamente na interface.
+
+---
+
+## RF04 – Registro de Informações
+O sistema deve permitir o registro de informações (ex: atendimentos, vendas ou atividades).
+
+Critério de Aceitação:
+- Os dados devem ser armazenados e exibidos posteriormente.
+
+Verificação:
+- Inserir dados e verificar se aparecem na listagem.
+
+---
+
+# 3. Requisitos Não Funcionais (RNF)
+
+## RNF01 – Desempenho
+O sistema deve responder às ações do usuário em até 3 segundos.
+
+Métrica:
+- Tempo de resposta menor ou igual a 3 segundos.
+
+---
+
+## RNF02 – Usabilidade
+A interface deve ser simples e intuitiva para usuários iniciantes.
+
+Métrica:
+- Usuário deve conseguir utilizar as funções principais sem treinamento técnico.
+
+---
+
+# 4. Regras de Negócio (RN)
+
+## RN01 – Acesso Restrito
+Apenas usuários cadastrados podem acessar o sistema.
+
+---
+
+## RN02 – Validação de Dados
+O sistema não deve permitir cadastro com campos obrigatórios vazios.
